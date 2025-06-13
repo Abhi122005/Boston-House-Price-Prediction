@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class='background-container'>
+        <img class='image' src='https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-d3c4-61f7-8907-ba608ff2181b/raw?se=2025-06-13T07%3A04%3A33Z&sp=r&sv=2024-08-04&sr=b&scid=92955696-08b3-5c6b-b254-55f7dc25395f&skoid=24a7dec3-38fc-4904-b888-8abe0855c442&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-12T23%3A55%3A55Z&ske=2025-06-13T23%3A55%3A55Z&sks=b&skv=2024-08-04&sig=Nnbh4qDoxppt8HyFGCzblu9lqjWAyKBgbOtQGYTU69s%3D'/>
+        <form action='/predict' method='post' class='form-container'>
+            <label for="CRIM">CRIM:</label>
+            <input type="text" name="CRIM" placeholder="Enter value" required><br>
+
+            <label for="ZN">ZN:</label>
+            <input type="text" name="ZN" placeholder="Enter value" required><br>
+
+            <label for="INDUS">INDUS:</label>
+            <input type="text" name="INDUS" placeholder="Enter value" required><br>
+
+            <label for="CHAS">CHAS:</label>
+            <input type="text" name="CHAS" placeholder="Enter value" required><br>
+
+            <label for="NOX">NOX:</label>
+            <input type="text" name="NOX" placeholder="Enter value" required><br>
+
+            <label for="RM">RM:</label>
+            <input type="text" name="RM" placeholder="Enter value" required><br>
+
+            <label for="AGE">AGE:</label>
+            <input type="text" name="AGE" placeholder="Enter value" required><br>
+
+            <label for="DIS">DIS:</label>
+            <input type="text" name="DIS" placeholder="Enter value" required><br>
+
+            <label for="RAD">RAD:</label>
+            <input type="text" name="RAD" placeholder="Enter value" required><br>
+
+            <label for="TAX">TAX:</label>
+            <input type="text" name="TAX" placeholder="Enter value" required><br>
+
+            <label for="PTRATIO">PTRATIO:</label>
+            <input type="text" name="PTRATIO" placeholder="Enter value" required><br>
+            <label>B:</label>
+            <input type="text" name="B" placeholder="Enter value" required><br>
+            <label>LSTAT:</label>
+            <input type="text" name="LSTAT" placeholder="Enter value" required><br>
+            <button type='submit' value='Predict' class='button'>Predict</button>
+        </form>
+    
+
+    {% if prediction_text %}
+        <h3>${{ prediction_text }}</h3>
+    {% endif %}
+    </div>
+</body>
+</html>
